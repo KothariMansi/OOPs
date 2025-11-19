@@ -19,11 +19,12 @@ class Student {
         System.out.println(this.name);
         System.out.println(this.age);
     }
-    Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-        System.out.println("contructor called");
+    Student(Student s2) {
+        this.name = s2.name;
+        this.age = s2.age;
     }
+
+    Student() {}
 }
 
 public class OOPs{
@@ -39,8 +40,12 @@ public class OOPs{
         pen1.printColor();
         pen2.printColor();
 
-        Student student1 = new Student("Ram", 23);
-        student1.printInfo();
+        Student student1 = new Student();
+        student1.name = "Ram";
+        student1.age = 12;
+
+        Student student2 = new Student(student1);
+        student2.printInfo();
 
     }
 }
