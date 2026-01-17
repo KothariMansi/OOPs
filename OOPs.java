@@ -1,46 +1,34 @@
-// Inheritance
-
-// Base Class
-class Shape {
-    public void area() {
-        System.out.println("Display Area");
+abstract class Animal {
+    Animal() {
+        System.out.println("You are creatig a new Animal....");
+    }
+    abstract void walk();
+    public void eats() {
+        System.out.println("Animal eats");
     }
 }
 
-// Sub Class
-class Triangle extends Shape {
-    public void area(int b, int h) {
-        System.out.println(1/2 * b * h);
+class Horse extends Animal {
+    Horse() {
+        System.out.println("Horse Created.");
+    }
+    public void walk() {
+        System.out.println("Walks on 4 legs");
     }
 }
 
-// Sub Class
-class EquilateralTraingle extends Triangle {
-    public void area(int b, int h) {
-        System.out.println(1/2 * b * h);
-    }
-}
-
-// Sub Class
-class Circle extends Shape {
-    public void area(int r) {
-        System.out.println(3.14 * r * r);
+class Chicken extends Animal {
+    public void walk() {
+        System.out.println("Walks on 2 legs");
     }
 }
 
 public class OOPs{
     public static void main(String args[]) {
-        Triangle t1 = new Triangle();
-        t1.color = "Red";
+        Horse horse1 = new Horse();
+        horse1.walk();
+        horse1.eats();
+
     }
 }
 
-// Inheritance Type
-// 1. Single Level Inheritance = Base Class -> Derived Class
-// 2. Multi Level Inheritance = Base Class -> Derived Class -> Derived Class
-// 3. Hierarchial Inheritance = Derived Class <- Base Class -> Derived Class
-// 4. Hybrid Inheritance =  Base Class
-    //                      /        \
-    //          Dervide Class       Derived Class
-    //                |
-    //          Derived Class
